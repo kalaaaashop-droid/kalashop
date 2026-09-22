@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Kalas Shop | Moda femenina con estilo</title>
+<meta name="description" content="Kalas Shop — catálogo de ropa de mujer: vestidos, blusas, conjuntos y accesorios con envíos a toda Venezuela." />
+
+<!-- Google Fonts: Playfair Display (títulos) + Inter (texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+<!-- Iconos (Font Awesome, solo los glifos que usamos) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+<!-- Tailwind CSS: hoja ya compilada (ver tailwind.config.js), sin depender
+     de un CDN en tiempo de ejecución -->
+<link rel="stylesheet" href="css/tailwind.css" />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="bg-cream text-ink font-sans antialiased">
+
+<!-- ============================= -->
+<!-- HEADER / NAVEGACIÓN           -->
+<!-- ============================= -->
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-beige transition-shadow duration-300">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
+
+    <!-- Logo tipográfico -->
+    <a href="#inicio" class="font-serif text-2xl md:text-3xl tracking-wide text-ink">
+      Kalas <span class="italic text-blush-dark">Shop</span>
+    </a>
+
+    <!-- Enlaces centrales (escritorio) -->
+    <nav class="hidden md:flex items-center gap-10 text-sm font-medium tracking-wide uppercase">
+      <a href="#inicio" class="nav-link">Inicio</a>
+      <a href="#catalogo" class="nav-link">Catálogo</a>
+      <a href="#colecciones" class="nav-link">Colecciones</a>
+      <a href="#contacto" class="nav-link">Contacto</a>
+    </nav>
+
+    <!-- Iconos de acción -->
+    <div class="flex items-center gap-5 text-ink">
+      <button id="search-toggle" aria-label="Buscar" class="hover:text-blush-dark transition-colors">
+        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+      </button>
+      <a href="#" aria-label="Mi cuenta" class="hover:text-blush-dark transition-colors hidden sm:inline-block">
+        <i class="fa-regular fa-user text-lg"></i>
+      </a>
+      <button id="cart-toggle" aria-label="Carrito de compras" class="relative hover:text-blush-dark transition-colors">
+        <i class="fa-solid fa-bag-shopping text-lg"></i>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-blush-dark text-white text-[10px] leading-none rounded-full w-4 h-4 flex items-center justify-center">0</span>
+      </button>
+      <!-- Botón menú móvil -->
+      <button id="mobile-menu-toggle" class="md:hidden text-xl" aria-label="Abrir menú">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Barra de búsqueda desplegable -->
+  <div id="search-bar" class="hidden border-t border-beige bg-cream">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4">
+      <input type="text" placeholder="Buscar vestidos, blusas, accesorios…"
+        class="w-full bg-transparent border-b border-ink-soft/40 focus:border-blush-dark outline-none py-2 font-sans text-sm" />
+    </div>
+  </div>
+
+  <!-- Menú móvil desplegable -->
+  <nav id="mobile-menu" class="hidden md:hidden flex-col bg-cream border-t border-beige px-6 py-4 gap-4 text-sm font-medium uppercase tracking-wide">
+    <a href="#inicio" class="nav-link">Inicio</a>
+    <a href="#catalogo" class="nav-link">Catálogo</a>
+    <a href="#colecciones" class="nav-link">Colecciones</a>
+    <a href="#contacto" class="nav-link">Contacto</a>
+  </nav>
+</header>
+
+<!-- ============================= -->
+<!-- HERO SECTION                  -->
+<!-- ============================= -->
+<section id="hero" class="relative h-screen min-h-[560px] flex items-center justify-center text-center overflow-hidden">
+  <!-- Imagen de fondo (placeholder Unsplash, reemplazar por foto propia) -->
+  <div class="absolute inset-0 bg-cover bg-center scale-105"
+       style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1920&q=80');">
+  </div>
+  <!-- Overlay oscuro para contraste de texto -->
+  <div class="absolute inset-0 bg-ink/40"></div>
+
+  <div class="relative z-10 px-6 max-w-2xl text-cream" data-aos>
+    <p class="uppercase tracking-[0.3em] text-xs md:text-sm font-medium mb-4 text-blush">Nueva Temporada</p>
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl leading-tight mb-5">
+      Eleva tu estilo con <span class="italic">Kalas Shop</span>
+    </h1>
+    <p class="text-sm md:text-base font-light text-cream/90 mb-9 max-w-md mx-auto">
+      Piezas femeninas y de tendencia, seleccionadas para acompañarte en cada momento.
+    </p>
+    <a href="#catalogo"
+       class="inline-block bg-blush text-ink font-medium text-sm tracking-wide uppercase px-8 py-4 rounded-full hover:bg-blush-dark hover:text-white transition-all duration-300">
+      Explorar Colección
+    </a>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- CATEGORÍAS                    -->
+<!-- ============================= -->
+<section id="colecciones" class="py-20 md:py-28 px-6 bg-cream">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="uppercase tracking-[0.3em] text-xs text-blush-dark font-medium mb-3">Kalas Shop</p>
+      <h2 class="font-serif text-3xl md:text-4xl">Compra por categoría</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Tarjeta de categoría (repetible) -->
+      <a href="#catalogo" class="category-card">
+        <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80" alt="Vestidos" />
+        <div class="category-overlay"><span>Vestidos</span></div>
+      </a>
+
+      <a href="#catalogo" class="category-card">
+        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?auto=format&fit=crop&w=600&q=80" alt="Blusas" />
+        <div class="category-overlay"><span>Blusas</span></div>
+      </a>
+
+      <a href="#catalogo" class="category-card">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=600&q=80" alt="Conjuntos" />
+        <div class="category-overlay"><span>Conjuntos</span></div>
+      </a>
+
+      <a href="#catalogo" class="category-card">
+        <img src="https://images.unsplash.com/photo-1611085583191-a3b181a88401?auto=format&fit=crop&w=600&q=80" alt="Accesorios" />
+        <div class="category-overlay"><span>Accesorios</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- CATÁLOGO DE PRODUCTOS         -->
+<!-- ============================= -->
+<section id="catalogo" class="py-20 md:py-28 px-6 bg-beige/50">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <p class="uppercase tracking-[0.3em] text-xs text-blush-dark font-medium mb-3">Lo más nuevo</p>
+      <h2 class="font-serif text-3xl md:text-4xl">Catálogo Destacado</h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- ---- Tarjeta de producto (repetible) ---- -->
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=700&q=80" alt="Vestido Midi Floral" />
+          <button class="add-to-cart" data-name="Vestido Midi Floral" data-price="45.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Vestido Midi Floral</h3>
+          <p>$45.00</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1485462537746-965f33f7f6a7?auto=format&fit=crop&w=700&q=80" alt="Blusa Satinada Rosa" />
+          <button class="add-to-cart" data-name="Blusa Satinada Rosa" data-price="28.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Blusa Satinada Rosa</h3>
+          <p>$28.00</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=700&q=80" alt="Conjunto Palazzo Beige" />
+          <button class="add-to-cart" data-name="Conjunto Palazzo Beige" data-price="52.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Conjunto Palazzo Beige</h3>
+          <p>$52.00</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=700&q=80" alt="Cárdigan Oversize Crema" />
+          <button class="add-to-cart" data-name="Cárdigan Oversize Crema" data-price="38.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Cárdigan Oversize Crema</h3>
+          <p>$38.00</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d14?auto=format&fit=crop&w=700&q=80" alt="Falda Plisada Midi" />
+          <button class="add-to-cart" data-name="Falda Plisada Midi" data-price="32.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Falda Plisada Midi</h3>
+          <p>$32.00</p>
+        </div>
+      </article>
+
+      <article class="product-card">
+        <div class="product-image-wrap">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=700&q=80" alt="Set Aretes Dorados" />
+          <button class="add-to-cart" data-name="Set Aretes Dorados" data-price="15.00">
+            <i class="fa-solid fa-bag-shopping mr-2"></i> Añadir al carrito
+          </button>
+        </div>
+        <div class="product-info">
+          <h3>Set Aretes Dorados</h3>
+          <p>$15.00</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-14">
+      <a href="#" class="inline-block border border-ink text-ink text-sm uppercase tracking-wide px-8 py-3 rounded-full hover:bg-ink hover:text-cream transition-all duration-300">
+        Ver todo el catálogo
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= -->
+<!-- FOOTER                        -->
+<!-- ============================= -->
+<footer id="contacto" class="bg-ink text-cream/90 pt-16 pb-8 px-6">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
+
+    <!-- Marca -->
+    <div class="md:col-span-1">
+      <h3 class="font-serif text-2xl mb-4 text-white">Kalas <span class="italic text-blush">Shop</span></h3>
+      <p class="text-sm text-cream/70 leading-relaxed">
+        Moda femenina de tendencia para mujeres que buscan estilo, calidad y actitud en cada prenda. Valencia, Venezuela.
+      </p>
+    </div>
+
+    <!-- Enlaces de políticas -->
+    <div>
+      <h4 class="uppercase text-xs tracking-widest text-blush mb-4">Políticas</h4>
+      <ul class="space-y-3 text-sm text-cream/70">
+        <li><a href="#" class="hover:text-white transition-colors">Envíos</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Devoluciones</a></li>
+        <li><a href="#" class="hover:text-white transition-colors">Privacidad</a></li>
+      </ul>
+    </div>
+
+    <!-- Enlaces rápidos -->
+    <div>
+      <h4 class="uppercase text-xs tracking-widest text-blush mb-4">Tienda</h4>
+      <ul class="space-y-3 text-sm text-cream/70">
+        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+        <li><a href="#catalogo" class="hover:text-white transition-colors">Catálogo</a></li>
+        <li><a href="#colecciones" class="hover:text-white transition-colors">Colecciones</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h4 class="uppercase text-xs tracking-widest text-blush mb-4">Newsletter</h4>
+      <p class="text-sm text-cream/70 mb-4">Sé la primera en enterarte de nuevas colecciones y ofertas.</p>
+      <form id="newsletter-form" class="flex gap-2">
+        <input type="email" required placeholder="Tu correo"
+          class="flex-1 min-w-0 bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm placeholder:text-cream/50 outline-none focus:border-blush" />
+        <button type="submit" aria-label="Suscribirme"
+          class="bg-blush hover:bg-blush-dark text-ink hover:text-white rounded-full w-10 h-10 flex items-center justify-center shrink-0 transition-colors">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </form>
+      <p id="newsletter-message" class="text-xs text-blush mt-2 hidden">¡Gracias por suscribirte! 💌</p>
+    </div>
+  </div>
+
+  <!-- Redes sociales + copyright -->
+  <div class="max-w-7xl mx-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-xs text-cream/50">&copy; <span id="year"></span> Kalas Shop. Todos los derechos reservados.</p>
+    <div class="flex items-center gap-5 text-lg">
+      <a href="https://www.instagram.com/kaalasshop?stkn=N3lxNzQ2ZWRhZnoy" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-blush transition-colors">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/message/SU44XHEAMUSFF1" target="_blank" rel="noopener" aria-label="WhatsApp" class="hover:text-blush transition-colors">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+      <a href="#" aria-label="TikTok" class="hover:text-blush transition-colors">
+        <i class="fa-brands fa-tiktok"></i>
+      </a>
+      <a href="#" aria-label="Facebook" class="hover:text-blush transition-colors">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================= -->
+<!-- BOTONES FLOTANTES (WhatsApp / Instagram) -->
+<!-- ============================= -->
+<div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+  <a href="https://wa.me/message/SU44XHEAMUSFF1" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"
+     class="floating-btn bg-[#25D366]">
+    <i class="fa-brands fa-whatsapp text-2xl text-white"></i>
+  </a>
+  <a href="https://www.instagram.com/kaalasshop?stkn=N3lxNzQ2ZWRhZnoy" target="_blank" rel="noopener" aria-label="Síguenos en Instagram"
+     class="floating-btn bg-gradient-to-tr from-[#feda75] via-[#d62976] to-[#4f5bd5]">
+    <i class="fa-brands fa-instagram text-2xl text-white"></i>
+  </a>
+</div>
+
+<!-- Toast de confirmación al añadir al carrito -->
+<div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-ink text-cream text-sm px-6 py-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

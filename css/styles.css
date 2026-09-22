@@ -1,0 +1,188 @@
+/* ==========================================================
+   Kalas Shop — estilos complementarios a Tailwind (CDN)
+   Aquí van únicamente los estilos que Tailwind no resuelve
+   de forma limpia con clases utilitarias: pseudo-elementos,
+   animaciones y composiciones de tarjetas reutilizadas.
+   ========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-padding-top: 80px; /* compensa el header fijo al hacer scroll a anclas */
+}
+
+/* -------------------- Header -------------------- */
+
+#site-header.is-scrolled {
+  box-shadow: 0 2px 20px rgba(46, 42, 38, 0.06);
+}
+
+.nav-link {
+  position: relative;
+  color: #2e2a26;
+  transition: color 0.25s ease;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #ce968b; /* blush-dark */
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #ce968b;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* -------------------- Tarjetas de categoría -------------------- */
+
+.category-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 4;
+  border-radius: 1rem;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.08);
+}
+
+.category-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(to top, rgba(46, 42, 38, 0.55) 0%, rgba(46, 42, 38, 0) 55%);
+}
+
+.category-overlay span {
+  color: #faf6f0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  letter-spacing: 0.03em;
+}
+
+/* -------------------- Tarjetas de producto -------------------- */
+
+.product-card {
+  background: #ffffff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(46, 42, 38, 0.06);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 14px 32px rgba(46, 42, 38, 0.14);
+  transform: translateY(-4px);
+}
+
+.product-image-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.product-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover .product-image-wrap img {
+  transform: scale(1.06);
+}
+
+/* Botón "Añadir al carrito": aparece deslizándose desde abajo al hacer
+   hover sobre la tarjeta, y además cambia de color al pasar el mouse
+   directamente sobre el botón. */
+.add-to-cart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  background: rgba(46, 42, 38, 0.92);
+  color: #faf6f0;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.85rem 0;
+  text-align: center;
+  transition: transform 0.35s ease, background-color 0.25s ease;
+  cursor: pointer;
+  border: none;
+}
+
+.product-card:hover .add-to-cart {
+  transform: translateY(0);
+}
+
+.add-to-cart:hover {
+  background: #ce968b; /* blush-dark en hover directo del botón */
+  color: #2e2a26;
+}
+
+.product-info {
+  padding: 1.1rem 1.25rem 1.4rem;
+}
+
+.product-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: #2e2a26;
+  margin-bottom: 0.35rem;
+}
+
+.product-info p {
+  font-size: 0.95rem;
+  color: #ce968b;
+  font-weight: 500;
+}
+
+/* -------------------- Botones flotantes -------------------- */
+
+.floating-btn {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(46, 42, 38, 0.25);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.floating-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(46, 42, 38, 0.32);
+}
+
+/* -------------------- Utilidades -------------------- */
+
+::selection {
+  background: #e3b9b0;
+  color: #2e2a26;
+}

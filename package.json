@@ -1,0 +1,13 @@
+{
+  "name": "kalas-shop",
+  "version": "1.0.0",
+  "description": "Catálogo web de Kalas Shop, tienda de ropa de mujer.",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --minify",
+    "watch:css": "tailwindcss -i css/tailwind-input.css -o css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
