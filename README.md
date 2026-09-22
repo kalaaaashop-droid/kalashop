@@ -13,6 +13,9 @@ kalas-shop/
 │   └── styles.css         # Estilos que Tailwind no cubre (tarjetas, hover del botón, animaciones)
 ├── js/
 │   └── script.js           # Interactividad: menú móvil, búsqueda, carrito, newsletter
+├── img/
+│   ├── logo.png             # Logotipo oficial (fondo transparente), usado en header y footer
+│   └── favicon.png          # Ícono de pestaña del navegador, a partir del logo oficial
 ├── tailwind.config.js      # Paleta de colores y tipografías de la marca
 └── package.json            # Scripts para regenerar css/tailwind.css
 ```
@@ -30,6 +33,7 @@ kalas-shop/
 
 - **Textos y precios**: edita directamente el HTML dentro de `<section id="catalogo">`.
 - **Fotos de productos**: reemplaza las URLs de Unsplash (`https://images.unsplash.com/...`) por las fotos reales de tus prendas. Puedes subir las imágenes a la carpeta `img/` y usar rutas relativas como `img/vestido-midi.jpg`.
+- **Logo**: `img/logo.png` es el logotipo oficial con el fondo recortado (transparente), por eso se ve bien tanto en el header claro como en el footer vino. Si la marca actualiza su logo, reemplaza ese archivo (y `img/favicon.png`) manteniendo los mismos nombres.
 - **Colores**: la paleta usa los colores oficiales del logo de Kalas Shop — vino/burdeos `#670627` (token `ink`, para textos, botones y el fondo del footer) y rosa `#FFBEC6` (token `blush`, para acentos y detalles), definidos en `tailwind.config.js`. Si la marca actualiza sus colores, cambia los códigos hexadecimales ahí y corre `npm install && npm run build:css` para regenerar `css/tailwind.css`.
 - **WhatsApp / Instagram**: los enlaces ya están conectados a tus cuentas reales en el footer y en los botones flotantes.
 - **Carrito**: por ahora el contador es solo visual (en memoria del navegador). Para un carrito funcional con pagos reales, el siguiente paso sería integrar una plataforma como Shopify, WooCommerce o un backend propio.
