@@ -4,12 +4,50 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeaderScrollShadow();
+  initHeroSlider();
   initMobileMenu();
   initSearchToggle();
   initCart();
   initNewsletterForm();
   document.getElementById('year').textContent = new Date().getFullYear();
 });
+
+/* ---------- Carrusel del hero ---------- */
+function initHeroSlider() {
+  const track = document.getElementById('hero-track');
+  if (!track) return;
+
+  const dots = document.querySelectorAll('.hero-dot');
+  const slideCount = track.children.length;
+  const intervalMs = 5000;
+  let index = 0;
+  let timer = null;
+
+  function goTo(i) {
+    index = (i + slideCount) % slideCount;
+    track.style.transform = `translateX(-${index * (100 / slideCount)}%)`;
+    dots.forEach((dot, di) => dot.classList.toggle('active', di === index));
+  }
+
+  function startAutoplay() {
+    timer = setInterval(() => goTo(index + 1), intervalMs);
+  }
+
+  function resetAutoplay() {
+    clearInterval(timer);
+    startAutoplay();
+  }
+
+  dots.forEach((dot) => {
+    dot.addEventListener('click', () => {
+      goTo(Number(dot.dataset.index));
+      resetAutoplay();
+    });
+  });
+
+  goTo(0);
+  startAutoplay();
+}
 
 /* ---------- Header: sombra al hacer scroll ---------- */
 function initHeaderScrollShadow() {
