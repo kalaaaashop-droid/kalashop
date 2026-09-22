@@ -3,12 +3,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cream: '#FAF6F0',
-        beige: '#EDE2D0',
-        blush: '#E3B9B0',
-        'blush-dark': '#CE968B',
-        ink: '#2E2A26',
-        'ink-soft': '#6B6259',
+        // Paleta oficial de marca Kalas Shop (tomada del logotipo)
+        cream: '#FFF8FA',        // blanco cálido con matiz rosado (fondo general)
+        beige: '#F7E6E9',        // tono muy pálido del rosa de marca (secciones alternas)
+        blush: '#FFBEC6',        // rosa de marca (acento principal, igual al logo)
+        'blush-dark': '#B36276', // rosa de marca oscurecido (texto/hover con buen contraste)
+        ink: '#670627',          // vino/burdeos de marca (igual al fondo del logo)
+        'ink-soft': '#AB7688',   // vino de marca aclarado (texto secundario)
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'],

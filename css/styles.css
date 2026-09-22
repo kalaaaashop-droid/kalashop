@@ -1,8 +1,10 @@
 /* ==========================================================
-   Kalas Shop — estilos complementarios a Tailwind (CDN)
+   Kalas Shop — estilos complementarios a Tailwind
    Aquí van únicamente los estilos que Tailwind no resuelve
    de forma limpia con clases utilitarias: pseudo-elementos,
    animaciones y composiciones de tarjetas reutilizadas.
+   Colores hexadecimales usados aquí = paleta de marca:
+   ink/wine #670627 · blush #FFBEC6 · blush-dark #B36276 · cream #FFF8FA
    ========================================================== */
 
 html {
@@ -16,12 +18,12 @@ body {
 /* -------------------- Header -------------------- */
 
 #site-header.is-scrolled {
-  box-shadow: 0 2px 20px rgba(46, 42, 38, 0.06);
+  box-shadow: 0 2px 20px rgba(103, 6, 39, 0.08);
 }
 
 .nav-link {
   position: relative;
-  color: #2e2a26;
+  color: #670627; /* ink (vino de marca) */
   transition: color 0.25s ease;
 }
 
@@ -32,12 +34,12 @@ body {
   bottom: -4px;
   width: 0;
   height: 1px;
-  background: #ce968b; /* blush-dark */
+  background: #b36276; /* blush-dark */
   transition: width 0.25s ease;
 }
 
 .nav-link:hover {
-  color: #ce968b;
+  color: #b36276;
 }
 
 .nav-link:hover::after {
@@ -73,11 +75,11 @@ body {
   align-items: flex-end;
   justify-content: center;
   padding-bottom: 1.5rem;
-  background: linear-gradient(to top, rgba(46, 42, 38, 0.55) 0%, rgba(46, 42, 38, 0) 55%);
+  background: linear-gradient(to top, rgba(103, 6, 39, 0.6) 0%, rgba(103, 6, 39, 0) 55%);
 }
 
 .category-overlay span {
-  color: #faf6f0;
+  color: #fff8fa;
   font-family: 'Playfair Display', serif;
   font-size: 1.25rem;
   letter-spacing: 0.03em;
@@ -89,12 +91,12 @@ body {
   background: #ffffff;
   border-radius: 1.25rem;
   overflow: hidden;
-  box-shadow: 0 4px 18px rgba(46, 42, 38, 0.06);
+  box-shadow: 0 4px 18px rgba(103, 6, 39, 0.08);
   transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
 .product-card:hover {
-  box-shadow: 0 14px 32px rgba(46, 42, 38, 0.14);
+  box-shadow: 0 14px 32px rgba(103, 6, 39, 0.16);
   transform: translateY(-4px);
 }
 
@@ -124,8 +126,8 @@ body {
   right: 0;
   bottom: 0;
   transform: translateY(100%);
-  background: rgba(46, 42, 38, 0.92);
-  color: #faf6f0;
+  background: rgba(103, 6, 39, 0.94);
+  color: #fff8fa;
   font-size: 0.8rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -141,8 +143,8 @@ body {
 }
 
 .add-to-cart:hover {
-  background: #ce968b; /* blush-dark en hover directo del botón */
-  color: #2e2a26;
+  background: #ffbec6; /* blush: rosa de marca en hover directo del botón */
+  color: #670627; /* ink: vino de marca */
 }
 
 .product-info {
@@ -152,13 +154,13 @@ body {
 .product-info h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.05rem;
-  color: #2e2a26;
+  color: #670627;
   margin-bottom: 0.35rem;
 }
 
 .product-info p {
   font-size: 0.95rem;
-  color: #ce968b;
+  color: #b36276;
   font-weight: 500;
 }
 
@@ -171,18 +173,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 18px rgba(46, 42, 38, 0.25);
+  box-shadow: 0 6px 18px rgba(103, 6, 39, 0.28);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .floating-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 10px 24px rgba(46, 42, 38, 0.32);
+  box-shadow: 0 10px 24px rgba(103, 6, 39, 0.36);
 }
 
 /* -------------------- Utilidades -------------------- */
 
 ::selection {
-  background: #e3b9b0;
-  color: #2e2a26;
+  background: #ffbec6;
+  color: #670627;
 }
