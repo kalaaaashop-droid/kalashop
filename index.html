@@ -29,7 +29,7 @@
 <!-- ============================= -->
 <!-- HEADER / NAVEGACIÓN           -->
 <!-- ============================= -->
-<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-cream/80 backdrop-blur-md border-b border-beige transition-shadow duration-300">
+<header id="site-header" class="fixed top-0 inset-x-0 z-50 bg-ink/95 backdrop-blur-md border-b border-white/10 transition-shadow duration-300">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-20">
 
     <!-- Logotipo oficial de la marca -->
@@ -46,16 +46,16 @@
     </nav>
 
     <!-- Iconos de acción -->
-    <div class="flex items-center gap-5 text-ink">
-      <button id="search-toggle" aria-label="Buscar" class="hover:text-blush-dark transition-colors">
+    <div class="flex items-center gap-5 text-cream">
+      <button id="search-toggle" aria-label="Buscar" class="hover:text-blush transition-colors">
         <i class="fa-solid fa-magnifying-glass text-lg"></i>
       </button>
-      <a href="#" aria-label="Mi cuenta" class="hover:text-blush-dark transition-colors hidden sm:inline-block">
+      <a href="#" aria-label="Mi cuenta" class="hover:text-blush transition-colors hidden sm:inline-block">
         <i class="fa-regular fa-user text-lg"></i>
       </a>
-      <button id="cart-toggle" aria-label="Carrito de compras" class="relative hover:text-blush-dark transition-colors">
+      <button id="cart-toggle" aria-label="Carrito de compras" class="relative hover:text-blush transition-colors">
         <i class="fa-solid fa-bag-shopping text-lg"></i>
-        <span id="cart-count" class="absolute -top-2 -right-2 bg-blush-dark text-white text-[10px] leading-none rounded-full w-4 h-4 flex items-center justify-center">0</span>
+        <span id="cart-count" class="absolute -top-2 -right-2 bg-blush text-ink text-[10px] leading-none rounded-full w-4 h-4 flex items-center justify-center">0</span>
       </button>
       <!-- Botón menú móvil -->
       <button id="mobile-menu-toggle" class="md:hidden text-xl" aria-label="Abrir menú">
@@ -65,15 +65,15 @@
   </div>
 
   <!-- Barra de búsqueda desplegable -->
-  <div id="search-bar" class="hidden border-t border-beige bg-cream">
+  <div id="search-bar" class="hidden border-t border-white/10 bg-ink">
     <div class="max-w-7xl mx-auto px-6 lg:px-10 py-4">
       <input type="text" placeholder="Buscar vestidos, blusas, accesorios…"
-        class="w-full bg-transparent border-b border-ink-soft/40 focus:border-blush-dark outline-none py-2 font-sans text-sm" />
+        class="w-full bg-transparent border-b border-cream/30 focus:border-blush outline-none py-2 font-sans text-sm text-cream placeholder:text-cream/50" />
     </div>
   </div>
 
   <!-- Menú móvil desplegable -->
-  <nav id="mobile-menu" class="hidden md:hidden flex-col bg-cream border-t border-beige px-6 py-4 gap-4 text-sm font-medium uppercase tracking-wide">
+  <nav id="mobile-menu" class="hidden md:hidden flex-col bg-ink border-t border-white/10 px-6 py-4 gap-4 text-sm font-medium uppercase tracking-wide">
     <a href="#inicio" class="nav-link">Inicio</a>
     <a href="#catalogo" class="nav-link">Catálogo</a>
     <a href="#colecciones" class="nav-link">Colecciones</a>

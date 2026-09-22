@@ -23,7 +23,7 @@ body {
 
 .nav-link {
   position: relative;
-  color: #670627; /* ink (vino de marca) */
+  color: #fff8fa; /* cream, para leerse sobre el header vino */
   transition: color 0.25s ease;
 }
 
@@ -34,12 +34,12 @@ body {
   bottom: -4px;
   width: 0;
   height: 1px;
-  background: #b36276; /* blush-dark */
+  background: #ffbec6; /* blush */
   transition: width 0.25s ease;
 }
 
 .nav-link:hover {
-  color: #b36276;
+  color: #ffbec6;
 }
 
 .nav-link:hover::after {
